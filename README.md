@@ -31,4 +31,7 @@ SpotifyStatsViewer is a personalized music insights app built with SwiftUI. It c
 - **Spotify Web API** – Retrieves real-time user data and music metadata  
 - **URLSession** – Used for secure networking and API requests  
 - **SwiftData** – Persists recently played track history offline  
+![IMG_6670](https://github.com/user-attachments/assets/9b3d98d0-1e1e-46e4-ad87-23fbb1177b2c)
+![IMG_6673](https://github.com/user-attachments/assets/492239d2-69b8-41ad-9d1e-e6ab1f2f9d03)
+![IMG_6671](https://github.com/user-attachments/assets/8a650093-4663-4fff-9196-772946f60b5c)
 
