@@ -1,5 +1,5 @@
-import Foundation
 import CryptoKit
+import Foundation
 
 enum PKCEHelper {
     static var codeVerifier: String = ""
@@ -21,6 +21,6 @@ enum PKCEHelper {
 
     private static func randomString(length: Int) -> String {
         let characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-        return String((0..<length).map { _ in characters.randomElement()! })
+        return String((0 ..< length).map { _ in characters.randomElement()! })
     }
 }

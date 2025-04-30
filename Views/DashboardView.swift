@@ -10,7 +10,8 @@ struct DashboardView: View {
                     if let user = viewModel.userProfile {
                         HStack {
                             if let imageUrl = user.images?.first?.url,
-                               let url = URL(string: imageUrl) {
+                               let url = URL(string: imageUrl)
+                            {
                                 AsyncImage(url: url) { image in
                                     image.resizable()
                                 } placeholder: {
@@ -36,6 +37,20 @@ struct DashboardView: View {
                     .padding(.horizontal)
                     .onChange(of: viewModel.topTimeRange) { _ in
                         viewModel.loadUserData()
+                    }
+
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text("Top Genres")
+                            .font(.custom("BubblegumSans-Regular", size: 20))
+                            .foregroundColor(.primary)
+                            .padding(.horizontal)
+
+                        ForEach(viewModel.topGenres, id: \.self) { genre in
+                            Text("🎧 \(genre)")
+                                .font(.custom("BubblegumSans-Regular", size: 16))
+                                .foregroundColor(.primary)
+                                .padding(.horizontal)
+                        }
                     }
 
                     VStack(alignment: .leading, spacing: 8) {

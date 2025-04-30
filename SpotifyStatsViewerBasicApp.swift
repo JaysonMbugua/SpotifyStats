@@ -1,5 +1,5 @@
-import SwiftUI
 import SwiftData
+import SwiftUI
 
 @main
 struct SpotifyStatsViewerApp: App {
@@ -7,6 +7,7 @@ struct SpotifyStatsViewerApp: App {
         WindowGroup {
             ContentView()
         }
+        //.appShortcuts([ShowDashboardIntent()])
         .modelContainer(for: RecentTrack.self)
     }
 }

@@ -1,5 +1,5 @@
-import SwiftUI
 import SwiftData
+import SwiftUI
 
 struct RecentlyPlayedView: View {
     @Environment(\.modelContext) private var modelContext

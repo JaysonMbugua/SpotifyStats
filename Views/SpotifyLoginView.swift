@@ -26,11 +26,13 @@ struct SpotifyLoginView: UIViewRepresentable {
         }
 
         func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction,
-                     decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+                     decisionHandler: @escaping (WKNavigationActionPolicy) -> Void)
+        {
             if let url = navigationAction.request.url,
                url.absoluteString.contains("code="),
                let components = URLComponents(url: url, resolvingAgainstBaseURL: false),
-               let code = components.queryItems?.first(where: { $0.name == "code" })?.value {
+               let code = components.queryItems?.first(where: { $0.name == "code" })?.value
+            {
                 onCodeExtracted(code)
                 decisionHandler(.cancel)
                 return

@@ -1,5 +1,5 @@
-import SwiftUI
 import SwiftData
+import SwiftUI
 
 struct NowPlayingView: View {
     @Environment(\.modelContext) private var modelContext
@@ -12,7 +12,7 @@ struct NowPlayingView: View {
                     .font(.largeTitle)
                     .foregroundColor(.white)
 
-                //Now playing card
+                // Now playing card
                 VStack(spacing: 12) {
                     if let url = URL(string: track.album.images.first?.url ?? "") {
                         AsyncImage(url: url) { image in

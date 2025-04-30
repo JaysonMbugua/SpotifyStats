@@ -1,8 +1,8 @@
 
-import Foundation
-import SwiftUI
-import SwiftData
 import CryptoKit
+import Foundation
+import SwiftData
+import SwiftUI
 
 class SpotifyAuthViewModel: ObservableObject {
     @Published var isAuthorized = false
@@ -39,7 +39,7 @@ class SpotifyAuthViewModel: ObservableObject {
             URLQueryItem(name: "code_challenge", value: codeChallenge)
         ]
 
-        self.authURL = components.url
+        authURL = components.url
     }
 
     func exchangeCodeForToken(code: String, completion: @escaping () -> Void) {
@@ -97,13 +97,13 @@ class SpotifyAuthViewModel: ObservableObject {
             }
         }
 
-        SpotifyAPIService.fetchTopTracks(token: accessToken, timeRange: self.topTimeRange) { tracks in
+        SpotifyAPIService.fetchTopTracks(token: accessToken, timeRange: topTimeRange) { tracks in
             DispatchQueue.main.async {
                 self.topTracks = tracks
             }
         }
 
-        SpotifyAPIService.fetchTopArtists(token: accessToken, timeRange: self.topTimeRange) { artists in
+        SpotifyAPIService.fetchTopArtists(token: accessToken, timeRange: topTimeRange) { artists in
             DispatchQueue.main.async {
                 self.topArtists = artists
                 let genreCounts = Dictionary(grouping: artists.flatMap { $0.genres ?? [] }, by: { $0 }).mapValues { $0.count }

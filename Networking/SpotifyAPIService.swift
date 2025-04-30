@@ -85,7 +85,6 @@ struct RecentlyPlayedItem: Codable {
 // MARK: - API Service
 
 enum SpotifyAPIService {
-    
     static func fetchUserProfile(token: String, completion: @escaping (SpotifyUserProfile?) -> Void) {
         let url = URL(string: "https://api.spotify.com/v1/me")!
         var request = URLRequest(url: url)
@@ -196,7 +195,7 @@ enum SpotifyAPIService {
         var request = URLRequest(url: url)
         request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         
-        URLSession.shared.dataTask(with: request) { data, response, error in
+        URLSession.shared.dataTask(with: request) { data, _, error in
             guard let data = data else {
                 print("❌ No data received")
                 completion([])
@@ -262,7 +261,7 @@ enum SpotifyAPIService {
     
     // MARK: - Widget-specific Fetch
     
-    /*static func fetchTopArtistForWidget(token: String, completion: @escaping (TopArtist?) -> Void) {
+    /* static func fetchTopArtistForWidget(token: String, completion: @escaping (TopArtist?) -> Void) {
      fetchTopArtists(token: token, timeRange: "short_term") { artists in
      guard let topArtist = artists.first else {
      completion(nil)
@@ -276,4 +275,4 @@ enum SpotifyAPIService {
      }
      }
      
-     }*/}
+     } */ }

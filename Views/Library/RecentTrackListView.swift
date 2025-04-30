@@ -1,5 +1,5 @@
-import SwiftUI
 import SwiftData
+import SwiftUI
 
 struct RecentTrackListView: View {
     @Query(sort: \RecentTrack.playedAt, order: .reverse) var recentTracks: [RecentTrack]

@@ -57,7 +57,6 @@ struct ProfileView: View {
                     .cornerRadius(12)
                     .padding(.horizontal)
 
-                    // ✅ Actual logout logic here
                     Button(action: {
                         viewModel.isAuthorized = false
                         viewModel.accessToken = ""
