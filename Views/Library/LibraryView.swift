@@ -49,7 +49,7 @@ struct LibraryView: View {
                         .background(Color.gray)
                         .padding(.horizontal)
 
-                    Text("Recently Played (from SwiftData)")
+                    Text("Recently Played")
                         .font(.title2)
                         .foregroundColor(.primary)
                         .padding(.horizontal)

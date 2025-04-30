@@ -39,7 +39,6 @@ struct SpotifyItemsResponse<T: Codable>: Codable {
     let items: [T]
 }
 
-// MARK: - Public user & playlist
 
 struct SpotifyPublicUser: Codable {
     let id: String
@@ -82,7 +81,6 @@ struct RecentlyPlayedItem: Codable {
     let track: SpotifyTrack
 }
 
-// MARK: - API Service
 
 enum SpotifyAPIService {
     static func fetchUserProfile(token: String, completion: @escaping (SpotifyUserProfile?) -> Void) {
@@ -259,7 +257,7 @@ enum SpotifyAPIService {
         }.resume()
     }
     
-    // MARK: - Widget-specific Fetch
+
     
     /* static func fetchTopArtistForWidget(token: String, completion: @escaping (TopArtist?) -> Void) {
      fetchTopArtists(token: token, timeRange: "short_term") { artists in

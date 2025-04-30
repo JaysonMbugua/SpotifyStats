@@ -1,10 +1,3 @@
-//
-//  SpotifyShortcuts.swift
-//  SpotifyStatsViewerBasic
-//
-//  Created by Jayson Mbugua on 4/29/25.
-//
-
 import AppIntents
 
 struct ShowDashboardIntent: AppIntent {
